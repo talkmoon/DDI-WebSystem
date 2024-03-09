@@ -1,4 +1,7 @@
 <template>
+
+  <div id="building"></div>
+
   <section class="p-5">
     <div class="container">
       <div class="row align-items-center justify-content-between">
@@ -134,4 +137,23 @@ const currentDate = ref(new Date())
   width: 100%;
   display: block;
 }
+
+
+ #building{
+   background:url("src/img/beijing1.png");
+   width:100%;
+   height:100%;
+   position:fixed;
+   background-size:100% 100%;
+
+
+   z-index: -1;
+   top: 0;
+   left: 0;
+
+   //-webkit-filter: opacity(38%);
+   //filter: opacity(38%);
+ }
+
+
 </style>

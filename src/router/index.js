@@ -4,6 +4,7 @@ import nowdatabase from '../components/nowdatabase.vue'
 import demo2 from '../components/demo2.vue'
 import search from "@/components/Search.vue";
 import drugintroduce from '../components/DrugIntroduce.vue'
+import demo1 from "@/components/demo1.vue";
 
 
 
@@ -21,6 +22,7 @@ const router = createRouter({
     routes: [
         { path: '/nowdatabase', component: nowdatabase },
         { path: '/demo2', component: demo2 },
+        { path: '/demo1', component: demo1 },
         { path: '/search', component: search },
         { path: '/drugintroduce', component: drugintroduce}
     ]

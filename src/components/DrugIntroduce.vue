@@ -1,5 +1,9 @@
 <template>
+
+  <div id="building2"></div>
   <body>
+
+
 <!--  <section class="p-5">-->
 <!--    <div class="container">-->
 <!--      <div class="row g-4">-->
@@ -106,3 +110,18 @@
 </template>
 <script setup>
 </script>
+
+<style>
+#building2{
+  background:url("src/img/beijing2.png");
+  width:100%;
+  height:100%;
+  position:fixed;
+  background-size:100% 100%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
+
+</style>

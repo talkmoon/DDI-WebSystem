@@ -29,61 +29,185 @@ export default {
 </script>
 
 <template>
-  <div id="search">
-    <li>第一种药物</li>
-    <el-input v-model="input1" placeholder="请输入药物名称" />
-    <p>input1 is : {{input1}}</p>
-    <li>第二种药物</li>
-    <el-input v-model="input2" placeholder="请输入药物名称" />
-    <p>input2 is : {{input2}}</p>
-    <el-button type="primary" @click="search">查找现有数据库</el-button>
-    <div>
-      <h3>数据查询结果</h3>
-      <el-table :data="tableData" style="width: 100%">
-        <el-table-column prop="name1" label="药物1名称" width="180" />
-        <el-table-column prop="name2" label="药物2名称" width="180" />
-        <el-table-column prop="number1" label="药物1编号" width="180"/>
-        <el-table-column prop="number2" label="药物2编号" width="180"/>
-        <el-table-column prop="database_ddi" label="数据库中DDI" width="180"/>
-        <el-table-column prop="database_ddi_description" label="数据库中药物之间存在相互作用情况" width="80"/>
-        <el-table-column prop="ddi_prob" label="预测所得的DDI可能性" width="180"/>
-        <el-table-column prop="ddi_prob_description" label="预测所得的DDI情况" width="180"/>
-        <el-table-column prop="advise" label="给出建议" />
-      </el-table>
+  <div id="building3"></div>
+
+      <section class="p-6">
+        <div id="search">
+
+          <el-row>
+            <el-col :span="5"><div class="grid-content bg-purple"></div></el-col>
+            <el-col :span="13">
+              <p></p>
+              <!--        <div class="grid-content bg-purple-light">-->
+              <!--        <li>第一种药物</li>-->
+              <!--        <el-input :span="12" v-model="input1" placeholder="请输入药物名称" />-->
+              <!--        <p></p>-->
+              <!--        </div>-->
+              <div class="form-floating mb-3">
+                <input type="email" v-model="input1" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <!--          {{input1}}-->
+                <label for="floatingInput">第一种药物</label>
+              </div>
+            </el-col>
+            <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
+          </el-row>
+
+          <el-row>
+            <el-col :span="5"><div class="grid-content bg-purple"></div></el-col>
+            <el-col :span="13">
+              <p></p>
+              <!--        <div class="grid-content bg-purple-light">-->
+              <!--        <li>第一种药物</li>-->
+              <!--        <el-input :span="12" v-model="input1" placeholder="请输入药物名称" />-->
+              <!--        <p></p>-->
+              <!--        </div>-->
+              <div class="form-floating mb-3">
+                <input type="email" v-model="input2" class="form-control" id="floatingInput" placeholder="name@example.com">
+                <!--          {{input2}}-->
+                <label for="floatingInput">第二种药物</label>
+
+              </div>
+            </el-col>
+            <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
+          </el-row>
+
+          <el-row>
+            <el-col :span="5"><div class="grid-content bg-purple"></div></el-col>
+            <el-col :span="13">
+              <p></p>
+              <div class="grid-content bg-purple-light">
+                <!--          <el-button type="primary" @click="search">查找药物-药物相互作用</el-button>-->
+                <el-button type="primary"  @click="search" round>查找药物-药物相互作用</el-button>
+                <br>
+                <br>
+                <br>
+                <!--          <button type="button" @click="search" class="btn btn-outline-secondary">查找药物-药物相互作用</button>-->
+                <el-divider > <p class="fs-3">药物-药物相互作用查询结果</p></el-divider>
+              </div></el-col>
+            <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
+          </el-row>
+
+          <!--    <div class="demo-input-size">-->
+          <!--      <li>第一种药物</li>-->
+          <!--      <el-input :span="12" v-model="input1" placeholder="请输入药物名称" />-->
+          <!--      <p>input1 is : {{input1}}</p>-->
+          <!--      <li>第二种药物</li>-->
+          <!--      <el-input v-model="input2" placeholder="请输入药物名称" />-->
+          <!--      <p>input2 is : {{input2}}</p>-->
+          <!--    </div>-->
+          <el-row>
+            <el-col :span="5"><div class="grid-content bg-purple"></div></el-col>
+            <el-col :span="13">
+
+              <div>
+                <p></p>
+                <!--          <h3>数据查询结果</h3>-->
+                <el-table :data="tableData" border style="width: 100%">
+                  <el-table-column prop="name1" label="药物1名称" width="140" />
+                  <el-table-column prop="name2" label="药物2名称" width="140" />
+                  <el-table-column prop="number1" label="药物1编号" width="140"/>
+                  <el-table-column prop="number2" label="药物2编号" width="140"/>
+                  <el-table-column prop="database_ddi" label="数据库中DDI" width="150"/>
+                  <el-table-column prop="database_ddi_description" label="数据库中DDI情况" width="150"/>
+                  <el-table-column prop="ddi_prob" label="预测所得的DDI可能性" width="170"/>
+                  <el-table-column prop="ddi_prob_description" label="预测所得的DDI情况" width="180"/>
+                  <el-table-column prop="advise" label="给出建议" />
+                </el-table>
+              </div>
+
+            </el-col>
+            <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
+          </el-row>
+
+
+
+        </div>
+      </section>
+
+
+  <section class="p-5">
+    <div class="container">
+      <div class="row align-items-center justify-content-between">
+        <div class="col-md">
+          <img src="../img/baise.png" alt="1" class="img-fluid">
+          <img src="../img/baise1.png" alt="1" class="img-fluid">
+        </div>
+      </div>
     </div>
-  </div>
-<!--  <div>-->
-<!--    <section class="p-5 bg-primary text-light">-->
-<!--      <div class="container">-->
-<!--        <div class="d-md-flex justify-content-between align-items-center">-->
-<!--          <h3 class="mb-3">第一个输入框</h3>-->
-<!--          <div class="input-group news-input">-->
-<!--            &lt;!&ndash; input-group 可以让按钮和输入框在一起 &ndash;&gt;-->
-<!--            &lt;!&ndash; news-input 是自建的宽度 &ndash;&gt;-->
-<!--            <input type="text" class="form-control" placeholder="请输入第一种药物">-->
-<!--            &lt;!&ndash; placeholder 输入框提示内容 &ndash;&gt;-->
-<!--            <button class="btn btn-dark btn-lg">确定</button>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
+  </section>
+  <!--contact-->
 
-<!--    </section>-->
-<!--    <section class="p-5 bg-dark text-light">-->
-<!--      <div class="container">-->
-<!--        <div class="d-md-flex justify-content-between align-items-center">-->
-<!--          <h3 class="mb-3">第二个输入框</h3>-->
-<!--          <div class="input-group news-input">-->
-<!--            &lt;!&ndash; input-group 可以让按钮和输入框在一起 &ndash;&gt;-->
-<!--            <input type="text" class="form-control" placeholder="请输入第二种药物">-->
-<!--            <button class="btn btn-primary btn-lg">确定</button>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
 
-<!--    </section>-->
-<!--  </div>-->
+
+  <section id="contact">
+    <div class="lvjing">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-7 wow fadeInLeft animated">
+            <h2>
+              <span class="glyphicon glyphicon-send"></span>
+              &nbsp;
+              联系我们
+            </h2>
+<!--            <p>-->
+<!--              药物-药物相互作用预测是药物领域的重要问题，陕西师范大学计算机科学学院生物信息大数据实验室致力于研究基于深度学习的药物-药物相互作用预测方法及其他生物信息领域问题，具体内容详见雷秀娟教授谷歌学术。-->
+<!--            </p>-->
+            <address>
+              <p>
+                <span class="glyphicon glyphicon-map-marker"></span>
+                &nbsp;
+                本实验室致力于研究基于深度学习的药物-药物相互作用预测方法及其他生物信息领域问题
+              </p>
+              <p>
+                <span class="glyphicon glyphicon-map-marker"></span>
+                &nbsp;
+                具体内容详见雷秀娟教授谷歌学术：<a href="https://so2.cljtscd.com/citations?user=baqzftMAAAAJ&hl=zh-CN&oi=ao" target="_blank">点击跳转查看学术成果</a>
+              </p>
+              <p>
+                <span class="glyphicon glyphicon-map-marker"></span>
+                &nbsp;
+                地址: 陕西省西安市长安区西长安街陕西师范大学文津楼3527实验室。
+              </p>
+              <p>
+                <span class="glyphicon glyphicon-earphone"></span>
+                &nbsp;
+                电话: 15991503910
+              </p>
+              <p>
+                <span class="glyphicon glyphicon-envelope"></span>
+                &nbsp;
+                邮箱: 20212743@snnu.edu.com
+              </p>
+              <p>
+                <span class="glyphicon glyphicon-envelope"></span>
+                &nbsp;
+                GitHub: <a href="https://github.com/talkmoon/DDI-WebSystem" target="_blank">https://github.com/talkmoon/DDI-WebSystem</a>
+              </p>
+            </address>
+          </div>
+          <div class="col-md-5 wow fadeInRight animated">
+            <img align="right" src="../img/ditu.png" class="img-responsive" alt="联系我们"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--contact-->
+
 </template>
 
-<style scoped>
+<style>
+
+#building3{
+   background:url("src/img/beijing3.png");
+   width:100%;
+   height:100%;
+   position:fixed;
+   background-size:100% 100%;
+   z-index: -1;
+   top: 0;
+   left: 0;
+ }
+
 
 </style>

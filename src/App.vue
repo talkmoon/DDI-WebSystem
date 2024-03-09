@@ -44,23 +44,26 @@ const handleSelect = (key: string, keyPath: string[]) => {
     <!--使用 router-link 组件进行导航 -->
     <!--通过传递 `to` 来指定链接 -->
     <!--`<router-link>` 将呈现一个带有正确 `href` 属性的 `<a>` 标签-->
-    <router-link to="/demo2">
-      <el-menu-item index="3">模型预测</el-menu-item>
-    </router-link>
+
     <router-link to="/search">
       <el-menu-item index="4">相互作用查询</el-menu-item>
     </router-link>
     <el-sub-menu index="5">
-      <template #title>工作台</template>
-      <el-menu-item index="5-1">item one</el-menu-item>
-      <el-menu-item index="5-2">item two</el-menu-item>
-      <el-menu-item index="5-3">item three</el-menu-item>
-      <el-sub-menu index="5-4">
-        <template #title>item four</template>
-        <el-menu-item index="5-4-1">item one</el-menu-item>
-        <el-menu-item index="5-4-2">item two</el-menu-item>
-        <el-menu-item index="5-4-3">item three</el-menu-item>
-      </el-sub-menu>
+      <template #title>模型预测</template>
+      <el-menu-item index="5-1">
+        <router-link to="/demo1">
+          <el-menu-item index="5-1-1">
+            <el-button type="primary"  @click="">查找药物-药物相互作用</el-button>
+          </el-menu-item>
+
+        </router-link>
+
+      </el-menu-item>
+      <el-menu-item index="5-2">
+        <router-link to="/demo2">
+          <el-menu-item index="5-2-1">2</el-menu-item>
+        </router-link>
+      </el-menu-item>
     </el-sub-menu>
   </el-menu>
 
