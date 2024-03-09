@@ -1,10 +1,12 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
 import nowdatabase from '../components/nowdatabase.vue'
-import demo2 from '../components/demo2.vue'
 import search from "@/components/Search.vue";
 import drugintroduce from '../components/DrugIntroduce.vue'
-import demo1 from "@/components/demo1.vue";
+import MSResGUse from "@/components/MSResGUse.vue";
+import MSResGIntro from "@/components/MSResGIntro.vue";
+import DualCIntro from "@/components/DualCIntro.vue";
+import DualCUse from "@/components/DualCUse.vue";
 
 
 
@@ -21,8 +23,10 @@ const router = createRouter({
     // path 是 hash 地址，component 是要展示的组件
     routes: [
         { path: '/nowdatabase', component: nowdatabase },
-        { path: '/demo2', component: demo2 },
-        { path: '/demo1', component: demo1 },
+        { path: '/MSResGIntro', component: MSResGIntro },
+        { path: '/MSResGUse', component: MSResGUse },
+        { path: '/DualCIntro', component: DualCIntro },
+        { path: '/DualCUse', component: DualCUse },
         { path: '/search', component: search },
         { path: '/drugintroduce', component: drugintroduce}
     ]

@@ -51,17 +51,14 @@ const handleSelect = (key: string, keyPath: string[]) => {
     <el-sub-menu index="5">
       <template #title>模型预测</template>
       <el-menu-item index="5-1">
-        <router-link to="/demo1">
-          <el-menu-item index="5-1-1">
-            <el-button type="primary"  @click="">查找药物-药物相互作用</el-button>
-          </el-menu-item>
-
+        <router-link to="/MSResGIntro">
+          <el-menu-item index="5-1-1">MSResG模型</el-menu-item>
         </router-link>
 
       </el-menu-item>
       <el-menu-item index="5-2">
-        <router-link to="/demo2">
-          <el-menu-item index="5-2-1">2</el-menu-item>
+        <router-link to="/DualCIntro">
+          <el-menu-item index="5-2-1">DualC模型</el-menu-item>
         </router-link>
       </el-menu-item>
     </el-sub-menu>

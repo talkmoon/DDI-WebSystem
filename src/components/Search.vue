@@ -186,7 +186,7 @@ export default {
             </address>
           </div>
           <div class="col-md-5 wow fadeInRight animated">
-            <img align="right" src="../img/ditu.png" class="img-responsive" alt="联系我们"/>
+            <img align="center" src="../img/contactus.png" class="img-responsive" alt="联系我们"/>
           </div>
         </div>
       </div>
