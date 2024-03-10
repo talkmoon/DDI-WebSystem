@@ -29,7 +29,8 @@ const router = createRouter({
         { path: '/DualCUse', component: DualCUse },
         { path: '/search', component: search },
         { path: '/drugintroduce', component: drugintroduce}
-    ]
+    ],
+
 })
 
 // 4、向外共享路由对象

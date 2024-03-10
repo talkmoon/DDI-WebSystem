@@ -18,7 +18,7 @@ const handleSelect = (key: string, keyPath: string[]) => {
 <template>
 
   <el-menu
-      :default-active="activeIndex"
+      default-active="1"
       class="el-menu-demo"
       mode="horizontal"
       :ellipsis="false"
@@ -35,31 +35,35 @@ const handleSelect = (key: string, keyPath: string[]) => {
       />
     </el-menu-item>
     <div class="flex-grow" />
-    <router-link to="/DrugIntroduce">
-    <el-menu-item index="1">药物相互作用介绍</el-menu-item>
-    </router-link>
-    <router-link to="/nowdatabase">
-    <el-menu-item index="2">现有数据库</el-menu-item>
-    </router-link>
+
+    <el-menu-item index="1">
+      <router-link to="/DrugIntroduce" tag="p">药物相互作用介绍</router-link>
+    </el-menu-item>
+
+    <el-menu-item index="2">
+      <router-link to="/nowdatabase">现有数据库</router-link>
+    </el-menu-item>
+
     <!--使用 router-link 组件进行导航 -->
     <!--通过传递 `to` 来指定链接 -->
     <!--`<router-link>` 将呈现一个带有正确 `href` 属性的 `<a>` 标签-->
 
-    <router-link to="/search">
-      <el-menu-item index="4">相互作用查询</el-menu-item>
-    </router-link>
+
+      <el-menu-item index="4">
+        <router-link to="/search">相互作用查询</router-link>
+      </el-menu-item>
+
     <el-sub-menu index="5">
       <template #title>模型预测</template>
       <el-menu-item index="5-1">
-        <router-link to="/MSResGIntro">
-          <el-menu-item index="5-1-1">MSResG模型</el-menu-item>
-        </router-link>
-
+        <el-menu-item index="5-1-1" tag="a">
+          <router-link to="/MSResGIntro" class="link">MSResG模型</router-link>
+        </el-menu-item>
       </el-menu-item>
       <el-menu-item index="5-2">
-        <router-link to="/DualCIntro">
-          <el-menu-item index="5-2-1">DualC模型</el-menu-item>
-        </router-link>
+        <el-menu-item index="5-2-1">
+          <router-link to="/DualCIntro" class="link">DualC模型</router-link>
+        </el-menu-item>
       </el-menu-item>
     </el-sub-menu>
   </el-menu>
@@ -70,8 +74,15 @@ const handleSelect = (key: string, keyPath: string[]) => {
 
 </template>
 
-<style>
+<style scoped>
 .flex-grow {
   flex-grow: 1;
+}
+a {
+  text-decoration: #ffd04b;
+}
+.link {
+  text-decoration: #ffd04b;
+  color: #ffffff;
 }
 </style>

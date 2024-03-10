@@ -3,6 +3,20 @@
   <section class="p-5">
     <div class="container">
       <div class="row align-items-center justify-content-between">
+        <h1>MSResG模型介绍</h1>
+        <span>--------------------------------------------------------------------------------------------------------------</span>
+        <h2></h2>
+        <h2></h2>
+        <h2>药物联合治疗：</h2>
+        <p class="lead">随着批准的药物数量快速增加，药物联合治疗逐渐成为治疗癌症、心脑血管疾病等多种疾病的有效方法。我们乐见于有益结果，让药物组合产生“1+1>2”的治疗增效作用，但实际上DDI的发生往往也会导致一些意想不到的不良事件。所以对DDI的研究很有必要。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="p-5">
+    <div class="container">
+      <div class="row align-items-center justify-content-between">
         <h1>药物-药物相互作用常见的研究领域有哪些？</h1>
         <span>--------------------------------------------------------------------------------------------------------------</span>
         <h2></h2>
