@@ -43,7 +43,7 @@ body{
 
 /*contact*/
 #contact{
-    background: url("../img/shida.jpg") no-repeat;
+    background: url("../assets/img/shida.jpg") no-repeat;
     background-size: cover;
     color: #ffffff;
 }
