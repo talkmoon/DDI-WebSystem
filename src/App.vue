@@ -5,11 +5,29 @@ export default {
 </script>
 
 <script lang="ts" setup>
+import { UserFilled } from '@element-plus/icons-vue'
 import Search from "./components/Search.vue";
 import { ref } from 'vue'
 
 const activeIndex = ref('1')
 const activeIndex2 = ref('1')
+import { reactive, toRefs } from 'vue'
+// import {useRouter} from "vue-router";
+// const router = useRouter()
+// const user = () => {
+//
+//   router.push('/demo')
+//
+// }
+const state = reactive({
+  circleUrl:
+      'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png',
+  squareUrl:
+      'https://cube.elemecdn.com/9/c2/f0ee8a3c7c9638a54940382568c9dpng.png',
+  sizeList: ['small', '', 'large'] as const,
+})
+
+const { circleUrl, squareUrl, sizeList } = toRefs(state)
 const handleSelect = (key: string, keyPath: string[]) => {
   console.log(key, keyPath)
 
@@ -26,6 +44,7 @@ const handleSelect = (key: string, keyPath: string[]) => {
       text-color="#fff"
       active-text-color="#ffd04b"
       @select="handleSelect"
+      v-show="$route.name!=='login'"
   >
     <el-menu-item index="0">
       <img
@@ -66,12 +85,34 @@ const handleSelect = (key: string, keyPath: string[]) => {
         </el-menu-item>
       </el-menu-item>
     </el-sub-menu>
+    <el-menu-item index="6">
+      <el-avatar :size="40" :src="circleUrl" />
+      <el-sub-menu index="7">
+        <el-menu-item index="7-1">
+          <el-menu-item index="7-1-1" tag="a">
+            <router-link to="/PersonHome" class="link">个人中心</router-link>
+          </el-menu-item>
+        </el-menu-item>
+        <el-menu-item index="7-2">
+          <el-menu-item index="7-2-1">
+            <el-badge :value="2" class="item">
+              <router-link to="/PersonHome" class="link">消息</router-link>
+            </el-badge>
+          </el-menu-item>
+        </el-menu-item>
+        <el-menu-item index="8-2">
+          <el-menu-item index="8-2-1">
+            <router-link to="/DualCIntro" class="link">退出</router-link>
+          </el-menu-item>
+        </el-menu-item>
+      </el-sub-menu>
+
+    </el-menu-item>
   </el-menu>
 
   <!-- 路由出口 -->
   <!-- 路由匹配到的组件将渲染在这里 -->
-  <router-view></router-view>
-
+  <router-view/>
 </template>
 
 <style scoped>
@@ -84,5 +125,9 @@ a {
 .link {
   text-decoration: #ffd04b;
   color: #ffffff;
+}
+.item {
+  margin-top: 10px;
+  margin-right: 40px;
 }
 </style>

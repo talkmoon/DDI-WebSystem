@@ -7,6 +7,8 @@ import MSResGUse from "@/components/MSResGUse.vue";
 import MSResGIntro from "@/components/MSResGIntro.vue";
 import DualCIntro from "@/components/DualCIntro.vue";
 import DualCUse from "@/components/DualCUse.vue";
+import Demo from "@/components/Demo.vue";
+import PersonHome from "@/components/PersonHome.vue";
 
 
 
@@ -27,8 +29,12 @@ const router = createRouter({
         { path: '/MSResGUse', component: MSResGUse },
         { path: '/DualCIntro', component: DualCIntro },
         { path: '/DualCUse', component: DualCUse },
+        { path: '/PersonHome', component: PersonHome },
         { path: '/search', component: search },
-        { path: '/drugintroduce', component: drugintroduce}
+        { path: '/drugintroduce', name: 'drugintroduce' , component: drugintroduce},
+        { path: '/' , redirect: '/login'},
+        { path: '/Demo' , component: Demo},
+        { path: '/login' , name: 'login' , component: () => import(/* webpackChunkName: "about" */ '../views/login.vue')},
     ],
 
 })
