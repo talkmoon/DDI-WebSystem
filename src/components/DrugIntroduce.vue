@@ -3,61 +3,13 @@
   <div id="building2"></div>
   <body>
 
-
-<!--  <section class="p-5">-->
-<!--    <div class="container">-->
-<!--      <div class="row g-4">-->
-<!--        &lt;!&ndash; g-4 gap 的意思 加间距 &ndash;&gt;-->
-<!--        <div class="col-md">-->
-<!--          &lt;!&ndash; -md 可以让小于mid时候row的样式不生效 &ndash;&gt;-->
-<!--          <div class="card bg-light text-dark">-->
-<!--            <div class="card-body text-center">-->
-<!--              <div class="card-title">-->
-<!--                第一个-->
-<!--              </div>-->
-<!--              <div class="card-text">-->
-<!--                zhelihusdwadwad-->
-<!--              </div>-->
-<!--              <img src="../img/showcase.svg" alt="showcase" class="w-50">-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="col-md">-->
-<!--          <div class="card bg-secondary text-light">-->
-<!--            <div class="card-body text-center">-->
-<!--              <div class="card-title">-->
-<!--                第二个-->
-<!--              </div>-->
-<!--              <div class="card-text">-->
-<!--                diergemoxin-->
-<!--              </div>-->
-<!--              <img src="../img/showcase.svg" alt="showcase" class="w-50">-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--        <div class="col-md">-->
-<!--          <div class="card bg-secondary text-light">-->
-<!--            <div class="card-body text-center">-->
-<!--              <div class="card-title">-->
-<!--                第三个-->
-<!--              </div>-->
-<!--              <div class="card-text">-->
-<!--                ababababab-->
-<!--              </div>-->
-<!--              <img src="../img/showcase.svg" alt="showcase" class="w-50">-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </section>-->
   <section class="p-5">
     <div class="container">
       <div class="row align-items-center justify-content-between">
 
         <div class="col-md">
           <!-- -md让其缩小上下排列 -->
-          <img src="../img/DDIex1.png" alt="1" class="img-fluid" >
+          <img src="../assets/img/DDIex1.png" alt="1" class="img-fluid" >
           <!-- 加上img-fluid 不会超出div的范围 -->
         </div>
         <div class="col-md p-5">
@@ -114,7 +66,7 @@
 
 <style>
 #building2{
-  background:url("src/img/beijing2.png");
+  background:url("../assets/img/beijing2.png");
   width:100%;
   height:100%;
   position:fixed;

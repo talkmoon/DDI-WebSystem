@@ -7,7 +7,7 @@
       <div class="row align-items-center justify-content-between">
         <div class="col-md">
           <!-- -md让其缩小上下排列 -->
-          <img src="../img/DrugBank.png" alt="1" class="img-fluid">
+          <img src="../assets/img/DrugBank.png" alt="1" class="img-fluid">
           <!-- 加上img-fluid 不会超出div的范围 -->
         </div>
         <div class="col-md p-5">
@@ -32,7 +32,7 @@
         </div>
         <div class="col-md p-5">
           <!-- -md让其缩小上下排列 -->
-          <img src="../img/PubChem.png" alt="1" class="img-fluid">
+          <img src="../assets/img/PubChem.png" alt="1" class="img-fluid">
           <!-- 加上img-fluid 不会超出div的范围 -->
         </div>
       </div>
@@ -47,7 +47,7 @@
 
         <div class="col-md">
           <!-- -md让其缩小上下排列 -->
-          <img src="../img/KEGG.png" alt="1" class="img-fluid">
+          <img src="../assets/img/KEGG.png" alt="1" class="img-fluid">
           <!-- 加上img-fluid 不会超出div的范围 -->
         </div>
         <div class="col-md p-5">
@@ -140,7 +140,7 @@ const currentDate = ref(new Date())
 
 
  #building{
-   background:url("src/img/beijing1.png");
+   background:url("../assets/img/beijing1.png");
    width:100%;
    height:100%;
    position:fixed;
