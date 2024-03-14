@@ -90,13 +90,13 @@ const handleSelect = (key: string, keyPath: string[]) => {
       <el-sub-menu index="7">
         <el-menu-item index="7-1">
           <el-menu-item index="7-1-1" tag="a">
-            <router-link to="/PersonHome" class="link">个人中心</router-link>
+            <router-link to="/MSResGIntro" class="link">个人中心</router-link>
           </el-menu-item>
         </el-menu-item>
         <el-menu-item index="7-2">
           <el-menu-item index="7-2-1">
             <el-badge :value="2" class="item">
-              <router-link to="/PersonHome" class="link">消息</router-link>
+              <router-link to="/DualCIntro" class="link">消息</router-link>
             </el-badge>
           </el-menu-item>
         </el-menu-item>
