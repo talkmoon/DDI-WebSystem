@@ -24,7 +24,7 @@
     <div class="container">
       <div class="row align-items-center justify-content-between">
         <div class="col-md">
-          <img src="../assets/img/DualCpic.jpg" alt="1" class="img-fluid">
+          <img src="../img/DualCpic.jpg" alt="1" class="img-fluid">
           <p></p>
           <p><h3>---------------DualC模型框架图----------------</h3></p>
         </div>
@@ -46,8 +46,8 @@
             </el-timeline-item>
             <el-timeline-item timestamp="" placement="top">
               <el-card>
-                <router-link to="/DualCUse">
-                  <a class="btn btn-secondary" >点击此处使用DualC模型进行训练与预测</a>
+                <router-link to="/MSResGUse">
+                  <a class="btn btn-secondary" >点击此处使用MSResG模型进行训练与预测</a>
                 </router-link>
               </el-card>
             </el-timeline-item>
@@ -84,7 +84,7 @@ h5 {
 </style>
 <style>
 #building5{
-  background:url("../assets/img/beijing6.png");
+  background:url("src/img/beijing6.png");
   width:100%;
   height:100%;
   position:fixed;

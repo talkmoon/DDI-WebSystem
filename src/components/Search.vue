@@ -38,21 +38,11 @@ export default {
             <el-col :span="5"><div class="grid-content bg-purple"></div></el-col>
             <el-col :span="13">
               <p></p>
-              <h2>药物-药物相互作用查询</h2>
-              <span>------------------------------------------------</span>
-              <h5 class="lead">
-                在此，您可以通过输入想要查询的两种药物直接查询药物-药物相互作用，我们会为您提供现有数据库中已证实的药物-药物相互作用以及通过MSResG模型和DualC模型
-                预测出的药物-药物相互作用，如果遇到现有数据库中没有被证实但是方法可以预测的药物-药物相互作用，
-                您可以重点关注，进行进一步的实验室验证或者在联合使用时重点关注。
-              </h5>
-            </el-col>
-            <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-          </el-row>
-
-          <el-row>
-            <el-col :span="5"><div class="grid-content bg-purple"></div></el-col>
-            <el-col :span="13">
-              <p></p>
+              <!--        <div class="grid-content bg-purple-light">-->
+              <!--        <li>第一种药物</li>-->
+              <!--        <el-input :span="12" v-model="input1" placeholder="请输入药物名称" />-->
+              <!--        <p></p>-->
+              <!--        </div>-->
               <div class="form-floating mb-3">
                 <input type="email" v-model="input1" class="form-control" id="floatingInput" placeholder="name@example.com">
                 <!--          {{input1}}-->
@@ -66,6 +56,11 @@ export default {
             <el-col :span="5"><div class="grid-content bg-purple"></div></el-col>
             <el-col :span="13">
               <p></p>
+              <!--        <div class="grid-content bg-purple-light">-->
+              <!--        <li>第一种药物</li>-->
+              <!--        <el-input :span="12" v-model="input1" placeholder="请输入药物名称" />-->
+              <!--        <p></p>-->
+              <!--        </div>-->
               <div class="form-floating mb-3">
                 <input type="email" v-model="input2" class="form-control" id="floatingInput" placeholder="name@example.com">
                 <!--          {{input2}}-->
@@ -82,7 +77,7 @@ export default {
               <p></p>
               <div class="grid-content bg-purple-light">
                 <!--          <el-button type="primary" @click="search">查找药物-药物相互作用</el-button>-->
-                <el-button type="primary"  @click="search" round size="large">查找药物-药物相互作用</el-button>
+                <el-button type="primary"  @click="search" round>查找药物-药物相互作用</el-button>
                 <br>
                 <br>
                 <br>
@@ -92,6 +87,14 @@ export default {
             <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
           </el-row>
 
+          <!--    <div class="demo-input-size">-->
+          <!--      <li>第一种药物</li>-->
+          <!--      <el-input :span="12" v-model="input1" placeholder="请输入药物名称" />-->
+          <!--      <p>input1 is : {{input1}}</p>-->
+          <!--      <li>第二种药物</li>-->
+          <!--      <el-input v-model="input2" placeholder="请输入药物名称" />-->
+          <!--      <p>input2 is : {{input2}}</p>-->
+          <!--    </div>-->
           <el-row>
             <el-col :span="5"><div class="grid-content bg-purple"></div></el-col>
             <el-col :span="13">
@@ -126,9 +129,8 @@ export default {
     <div class="container">
       <div class="row align-items-center justify-content-between">
         <div class="col-md">
-          <img src="../assets/img/baise.png" alt="1" class="img-fluid">
-          <img src="../assets/img/baise1.png" alt="1" class="img-fluid">
-          <img src="../assets/img/baise2.png" alt="1" class="img-fluid">
+          <img src="../img/baise.png" alt="1" class="img-fluid">
+          <img src="../img/baise1.png" alt="1" class="img-fluid">
         </div>
       </div>
     </div>
@@ -184,7 +186,7 @@ export default {
             </address>
           </div>
           <div class="col-md-5 wow fadeInRight animated">
-            <img align="center" src="../assets/img/contactus.png" class="img-responsive" alt="联系我们"/>
+            <img align="center" src="../img/contactus.png" class="img-responsive" alt="联系我们"/>
           </div>
         </div>
       </div>
@@ -197,7 +199,7 @@ export default {
 <style>
 
 #building3{
-   background:url("../assets/img/beijing3.png");
+   background:url("src/img/beijing3.png");
    width:100%;
    height:100%;
    position:fixed;

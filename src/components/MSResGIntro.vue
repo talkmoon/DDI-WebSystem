@@ -7,7 +7,7 @@
       <div class="row align-items-center justify-content-between">
         <div class="col-md">
           <!-- -md让其缩小上下排列 -->
-          <img src="../assets/img/MSResGpic.jpg" alt="1" class="img-fluid">
+          <img src="../img/MSResGpic.jpg" alt="1" class="img-fluid">
           <p></p>
           <p><h3>-------------MSResG模型框架图---------------</h3></p>
           <!-- 加上img-fluid 不会超出div的范围 -->
@@ -85,7 +85,7 @@ h5 {
 <style>
 
 #building4{
-  background:url("../assets/img/beijing5.png");
+  background:url("src/img/beijing5.png");
   width:100%;
   height:100%;
   position:fixed;
