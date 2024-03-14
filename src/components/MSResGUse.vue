@@ -21,7 +21,7 @@
     <div class="container">
       <div class="row align-items-center justify-content-between">
 
-      <!--左侧部分，参考模式的展示-->
+        <!--左侧部分，参考模式的展示-->
         <div class="col-md">
           <h2>文件格式参考如下：</h2>
           <p></p>
@@ -42,60 +42,54 @@
 
         <!--右侧部分，参考模式的展示-->
         <div class="col-md p-5">
+          <!--参数-->
           <h2>参数表单提交：</h2>
-          <el-form
-              ref="ruleFormRef"
-              style="max-width: 600px"
-              :model="ruleForm"
-              status-icon
-              :rules="rules"
-              label-width="auto"
-              class="demo-ruleForm"
-          >
-            <el-form-item label="Password" prop="pass" size="large">
-              <el-input v-model="ruleForm.pass" type="password" autocomplete="off" />
+          <p></p>
+          <el-form :model="form" label-width="auto" style="max-width: 600px">
+            <el-form-item label="训练周期" size="large">
+              <el-input v-model="form.xuexizhouqi" />
             </el-form-item>
-            <el-form-item label="Confirm" prop="checkPass">
-              <el-input
-                  v-model="ruleForm.checkPass"
-                  type="password"
-                  autocomplete="off"
-              />
+            <el-form-item label="嵌入维度" size="large">
+              <el-input v-model="form.qianruweidu" />
             </el-form-item>
-            <el-form-item label="Age" prop="age">
-              <el-input v-model.number="ruleForm.age" />
+            <el-form-item label="学习率" size="large">
+              <el-input v-model="form.xuexilv" />
             </el-form-item>
-            <el-form-item label="Age" prop="age">
-              <el-input v-model.number="ruleForm.age" />
-            </el-form-item>
-            <el-form-item>
-
+            <el-form-item label="Dropout率" size="large">
+              <el-input v-model="form.dlv" />
             </el-form-item>
           </el-form>
 
+          <!--数据集-->
+          <p></p>
           <h2>数据集文件上传：</h2>
+          <p></p>
           <el-upload
-              ref="upload"
+              v-model:file-list="fileList"
+              ref="uploadRef"
               class="upload-demo"
+              drag
               action="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15"
-              :limit="1"
-              :on-exceed="handleExceed"
-              :auto-upload="false"
+              multiple
+              :on-change="handleChange"
           >
-            <template #trigger>
-              <el-button type="primary">选择文件上传</el-button>
-              <el-button class="ml-3" type="success" @click="submitUpload;submitForm(ruleFormRef)">
-                提交至服务器
-              </el-button>
-            </template>
-
+            <el-icon class="el-icon--upload"><upload-filled /></el-icon>
+            <div class="el-upload__text">
+              将文件拖至此处或 <em>点击上传</em>
+            </div>
             <template #tip>
-              <div class="el-upload__tip text-red">
-                限制上传一个文件, 新上传文件会覆盖旧文件
+              <div class="el-upload__tip">
+                请注意：文件大小小于500kb
               </div>
             </template>
           </el-upload>
 
+
+          <p></p>
+          <!--上传参数和数据集-->
+          <el-button class="ml-3" type="success" @click="submitUpload;onSubmit">
+            上传数据集与参数表单，提交至服务器
+          </el-button>
 
         </div>
 
@@ -108,7 +102,7 @@
 
 
 
-<!--下方guolin黑框-->
+  <!--下方guolin黑框-->
   <footer class="p-5 bg-dark text-white text-center">
     <div class="container">
       <p class="lead">Copyright &copy; GuoLin</p>
@@ -162,92 +156,47 @@ h5 {
 
 <!--script-->
 <script lang="ts" setup>
-import { reactive, ref } from 'vue'
-import type { FormInstance, FormRules } from 'element-plus'
+import { reactive } from 'vue'
 
-const ruleFormRef = ref<FormInstance>()
-
-const checkAge = (rule: any, value: any, callback: any) => {
-  if (!value) {
-    return callback(new Error('Please input the age'))
-  }
-  setTimeout(() => {
-    if (!Number.isInteger(value)) {
-      callback(new Error('Please input digits'))
-    } else {
-      if (value < 18) {
-        callback(new Error('Age must be greater than 18'))
-      } else {
-        callback()
-      }
-    }
-  }, 1000)
-}
-
-const validatePass = (rule: any, value: any, callback: any) => {
-  if (value === '') {
-    callback(new Error('Please input the password'))
-  } else {
-    if (ruleForm.checkPass !== '') {
-      if (!ruleFormRef.value) return
-      ruleFormRef.value.validateField('checkPass', () => null)
-    }
-    callback()
-  }
-}
-const validatePass2 = (rule: any, value: any, callback: any) => {
-  if (value === '') {
-    callback(new Error('Please input the password again'))
-  } else if (value !== ruleForm.pass) {
-    callback(new Error("Two inputs don't match!"))
-  } else {
-    callback()
-  }
-}
-
-const ruleForm = reactive({
-  pass: '',
-  checkPass: '',
-  age: '',
+// do not use same name with ref
+const form = reactive({
+  xuexizhouqi: '',
+  qianruweidu: '',
+  xuexilv: '',
+  dlv: ''
 })
 
-const rules = reactive<FormRules<typeof ruleForm>>({
-  pass: [{ validator: validatePass, trigger: 'blur' }],
-  checkPass: [{ validator: validatePass2, trigger: 'blur' }],
-  age: [{ validator: checkAge, trigger: 'blur' }],
-})
-
-const submitForm = (formEl: FormInstance | undefined) => {
-  if (!formEl) return
-  formEl.validate((valid) => {
-    if (valid) {
-      console.log('submit!')
-    } else {
-      console.log('error submit!')
-      return false
-    }
-  })
-}
-
-const resetForm = (formEl: FormInstance | undefined) => {
-  if (!formEl) return
-  formEl.resetFields()
+// 表单上传
+const onSubmit = () => {
+  console.log('submit!')
 }
 
 
-import { genFileId } from 'element-plus'
-import type { UploadInstance, UploadProps, UploadRawFile } from 'element-plus'
 
-const upload = ref<UploadInstance>()
+// 文件上传
+import { ref } from 'vue'
+import { UploadFilled } from '@element-plus/icons-vue'
+import type { UploadInstance } from 'element-plus'
+import {UploadProps, UploadUserFile} from "element-plus";
 
-const handleExceed: UploadProps['onExceed'] = (files) => {
-  upload.value!.clearFiles()
-  const file = files[0] as UploadRawFile
-  file.uid = genFileId()
-  upload.value!.handleStart(file)
-}
+const uploadRef = ref<UploadInstance>()
 
 const submitUpload = () => {
-  upload.value!.submit()
+  uploadRef.value!.submit()
+}
+
+const fileList = ref<UploadUserFile[]>([
+  {
+    name: 'DDI.csv',
+    url: 'https://element-plus.org/images/element-plus-logo.svg',
+  },
+  {
+    name: 'SimJaccard.csv',
+    url: 'https://element-plus.org/images/element-plus-logo.svg',
+  },
+])
+
+const handleChange: UploadProps['onChange'] = (uploadFile, uploadFiles) => {
+  fileList.value = fileList.value.slice(-3)
 }
 </script>
